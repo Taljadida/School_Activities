@@ -2,10 +2,11 @@ name: Auto update albums.json
 
 on:
   push:
+    branches:
+      - master
     paths:
       - 'albums/**'
-      - 'scripts/**'
-      - 'package.json'
+      - 'auto-generate.js'
 
 permissions:
   contents: write
@@ -23,11 +24,9 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Generate albums.json
-        run: node scripts/generateAlbums.js
+        # Changed from scripts/generateAlbums.js to auto-generate.js based on your screenshot
+        run: node auto-generate.js
 
       - name: Commit changes
         run: |
