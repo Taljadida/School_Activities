@@ -3,7 +3,7 @@ name: Auto update albums.json
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'albums/**'
       - 'auto-generate.js'
