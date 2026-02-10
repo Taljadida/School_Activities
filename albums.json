@@ -1,0 +1,28 @@
+[
+  {
+    "id": "awards",
+    "title": "Awards",
+    "cover": "albums/awards/Video4.mp4",
+    "items": [
+      "albums/awards/Video4.mp4",
+      "albums/awards/photo2.jpeg",
+      "albums/awards/photo3.jpeg"
+    ]
+  },
+  {
+    "id": "events",
+    "title": "Events",
+    "cover": "albums/events/Video1.mp4",
+    "items": [
+      "albums/events/Video1.mp4"
+    ]
+  },
+  {
+    "id": "‏استقلال",
+    "title": "‏استقلال",
+    "cover": "albums/‏استقلال/Video1.mp4",
+    "items": [
+      "albums/‏استقلال/Video1.mp4"
+    ]
+  }
+]
