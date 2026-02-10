@@ -1,44 +1,34 @@
 [
   {
-    "id": "awards",
-    "title": "Awards",
-    "cover": "albums/awards/Video4.mp4",
-    "items": [
-      "albums/awards/Video4.mp4",
-      "albums/awards/photo2.jpeg",
-      "albums/awards/photo3.jpeg"
-    ]
-  },
-  {
     "id": "events",
     "title": "Events",
-    "cover": "albums/events/Video1.mp4",
+    "cover": "albums/events/مشاركة مدرستنا بمسابقة الإلقاء والخطابة 2.mp4",
     "items": [
-      "albums/events/Video1.mp4",
-      "albums/events/Video3.mp4",
-      "albums/events/Video5.mp4"
-    ]
-  },
-  {
-    "id": "photos",
-    "title": "Photos",
-    "cover": "albums/photos/photo4.jpeg",
-    "items": [
-      "albums/photos/photo4.jpeg",
-      "albums/photos/photo6.jpeg",
-      "albums/photos/photo7.jpeg",
-      "albums/photos/photo8.jpeg",
-      "albums/photos/photo9.jpeg"
+      "albums/events/مشاركة مدرستنا بمسابقة الإلقاء والخطابة 2.mp4",
+      "albums/events/مشاركة مدرستنا بمسابقة الإلقاء والخطابة.mp4",
+      "albums/events/مشاركة مدرستنا بيوم الاستقلال بالمنطقة التربوية في الشمال.mp4"
     ]
   },
   {
     "id": "videos",
     "title": "Videos",
-    "cover": "albums/videos/Video2.mp4",
+    "cover": "albums/videos/Boogie Woogie.mp4",
     "items": [
-      "albums/videos/Video2.mp4",
-      "albums/videos/Video6.mp4",
-      "albums/videos/Video7.mp4"
+      "albums/videos/Boogie Woogie.mp4",
+      "albums/videos/independence day.mp4",
+      "albums/videos/لغتي العربية.mp4"
+    ]
+  },
+  {
+    "id": "مقتطفات وصور من مسرحية",
+    "title": "مقتطفات وصور من مسرحية",
+    "cover": "albums/مقتطفات وصور من مسرحية/photo4.jpeg",
+    "items": [
+      "albums/مقتطفات وصور من مسرحية/photo4.jpeg",
+      "albums/مقتطفات وصور من مسرحية/photo6.jpeg",
+      "albums/مقتطفات وصور من مسرحية/photo7.jpeg",
+      "albums/مقتطفات وصور من مسرحية/photo8.jpeg",
+      "albums/مقتطفات وصور من مسرحية/photo9.jpeg"
     ]
   }
 ]
