@@ -10,26 +10,26 @@
     ]
   },
   {
-    "id": "videos",
-    "title": "Videos",
-    "cover": "albums/videos/independence day.mp4",
+    "id": "مقتطفات من الاحتفال بذكرى الاستقلال",
+    "title": "مقتطفات من الاحتفال بذكرى الاستقلال",
+    "cover": "albums/مقتطفات من الاحتفال بذكرى الاستقلال/independence day.mp4",
     "items": [
-      "albums/videos/independence day.mp4"
+      "albums/مقتطفات من الاحتفال بذكرى الاستقلال/independence day.mp4"
     ]
   },
   {
-    "id": "مقتطفات وصور من مسرحية",
-    "title": "مقتطفات وصور من مسرحية",
-    "cover": "albums/مقتطفات وصور من مسرحية/photo1.jpeg",
+    "id": "مقتطفات وصور من  مسرحية ميمو",
+    "title": "مقتطفات وصور من  مسرحية ميمو",
+    "cover": "albums/مقتطفات وصور من  مسرحية ميمو/photo1.jpeg",
     "items": [
-      "albums/مقتطفات وصور من مسرحية/photo1.jpeg",
-      "albums/مقتطفات وصور من مسرحية/photo2.jpeg",
-      "albums/مقتطفات وصور من مسرحية/photo3.jpeg",
-      "albums/مقتطفات وصور من مسرحية/photo4.jpeg",
-      "albums/مقتطفات وصور من مسرحية/photo6.jpeg",
-      "albums/مقتطفات وصور من مسرحية/photo7.jpeg",
-      "albums/مقتطفات وصور من مسرحية/photo8.jpeg",
-      "albums/مقتطفات وصور من مسرحية/photo9.jpeg"
+      "albums/مقتطفات وصور من  مسرحية ميمو/photo1.jpeg",
+      "albums/مقتطفات وصور من  مسرحية ميمو/photo2.jpeg",
+      "albums/مقتطفات وصور من  مسرحية ميمو/photo3.jpeg",
+      "albums/مقتطفات وصور من  مسرحية ميمو/photo4.jpeg",
+      "albums/مقتطفات وصور من  مسرحية ميمو/photo6.jpeg",
+      "albums/مقتطفات وصور من  مسرحية ميمو/photo7.jpeg",
+      "albums/مقتطفات وصور من  مسرحية ميمو/photo8.jpeg",
+      "albums/مقتطفات وصور من  مسرحية ميمو/photo9.jpeg"
     ]
   }
 ]
