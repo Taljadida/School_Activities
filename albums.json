@@ -12,11 +12,9 @@
   {
     "id": "videos",
     "title": "Videos",
-    "cover": "albums/videos/Boogie Woogie.mp4",
+    "cover": "albums/videos/independence day.mp4",
     "items": [
-      "albums/videos/Boogie Woogie.mp4",
-      "albums/videos/independence day.mp4",
-      "albums/videos/لغتي العربية.mp4"
+      "albums/videos/independence day.mp4"
     ]
   },
   {
