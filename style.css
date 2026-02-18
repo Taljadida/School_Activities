@@ -21,7 +21,7 @@ main { flex: 1; }
 /* --- TOP BAR --- */
 .top-bar {
     border-bottom: none;
-    padding: 10px 0;
+    padding: 20px 0; /* Increased padding to give the big logo room */
 }
 
 .top-bar-content {
@@ -29,33 +29,26 @@ main { flex: 1; }
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertical centering */
+    align-items: center; /* Ensures social icons stay centered with the big logo */
     padding: 0 40px;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-}
-
-.top-left {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between icon and name */
-    font-weight: 600;
-    text-transform: uppercase;
 }
 
 .top-logo-icon {
-    height: 18px; /* Keep it very small and subtle */
+    height: 80px; /* Increased from 30px to make it much bigger */
     width: auto;
-    filter: grayscale(100%); /* Optional: makes it look more high-end */
-    opacity: 0.7;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.top-logo-icon:hover {
+    transform: scale(1.05); /* Subtle pop effect when hovering */
 }
 
 .top-right a {
     text-decoration: none;
-    color: inherit;
-    margin-left: 18px;
-    font-size: 13px;
+    color: var(--text-muted);
+    margin-left: 20px;
+    font-size: 18px; /* Slightly bigger icons to match the bigger logo */
 }
 
 /* --- NAVBAR --- */
