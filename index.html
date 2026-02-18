@@ -1,22 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pinhole Clone</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElTalAlJadida Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div class="top-bar">
+    <div class="top-bar-content">
+        <div class="top-left">
+            <img src="logo-icon.jpeg" alt="" class="top-logo-icon">
+        </div>
+        <div class="top-right">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+    </div>
+</div>
+
 <nav class="navbar">
-  <div class="logo">MyGallery</div>
+    <div class="nav-content">
+        <h1 class="logo" id="navLogo">El Tal AlJadida</h1>
+        <div class="nav-separator" id="navSeparator"></div>
+        <div class="nav-info">
+            <h2 class="current-title" id="currentTitle">GALLERIES</h2>
+            <p class="current-count" id="currentCount">ALL ALBUMS</p>
+        </div>
+    </div>
 </nav>
 
 <main>
-  <div class="album-grid" id="albumGrid">
-    <!-- Albums loaded dynamically -->
-  </div>
+    <div class="album-grid" id="albumGrid"></div>
 </main>
+
+<footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2026 ELTALALJADIDA GALLERY. ALL RIGHTS RESERVED.</p>
+        <p class="credits">ELTALALJADIDA School</p>
+    </div>
+</footer>
 
 <script src="app.js"></script>
 </body>

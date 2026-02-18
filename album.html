@@ -4,104 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Album View</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="logo" onclick="window.location.href='index.html'" style="cursor:pointer">← Back</div>
-</nav>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="top-left">INFO@MYGALLERY.COM</div>
+            <div class="top-right">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
 
-<main>
-  <div class="album-grid" id="albumItems"></div>
-</main>
+    <nav class="navbar">
+        <div class="nav-content">
+            <h1 class="logo" onclick="window.location.href='index.html'" style="cursor:pointer">Pinhole</h1>
+            <div class="nav-separator" style="display:block;"></div> <div class="nav-info">
+                <h2 class="current-title" id="albumTitle">GALLERY</h2>
+                <p class="current-count" id="albumCount">0 PHOTOS</p>
+            </div>
+        </div>
+    </nav>
 
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script>
-const albumData = localStorage.getItem('currentAlbum');
+    <main>
+        <div class="album-grid" id="albumItems"></div>
+    </main>
 
-if (!albumData) {
-    window.location.href = 'index.html';
-} else {
-    const album = JSON.parse(albumData);
-    const grid = document.getElementById('albumItems');
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 PINHOLE GALLERY. ALL RIGHTS RESERVED.</p>
+            <p class="credits">DESIGNED FOR MOM</p>
+        </div>
+    </footer>
 
-    album.items.forEach((item) => {
-        const ext = item.split('.').pop().toLowerCase();
-        const isVideo = ['mp4', 'webm'].includes(ext);
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const albumData = localStorage.getItem('currentAlbum');
 
-        const el = document.createElement('a');
-        el.href = item;
-        el.className = 'glightbox';
-    el.setAttribute('data-gallery', 'album'); // ✅ ADD THIS
+        if (!albumData) {
+            window.location.href = 'index.html';
+        } else {
+            const album = JSON.parse(albumData);
+            const grid = document.getElementById('albumItems');
+            
+            // Set the dynamic navbar titles for this album
+            document.getElementById('albumTitle').innerText = album.title.toUpperCase();
+            document.getElementById('albumCount').innerText = `${album.items.length} PHOTOS`;
 
-        if (isVideo) el.setAttribute('data-glightbox', 'type: video');
+            album.items.forEach((item) => {
+                const ext = item.split('.').pop().toLowerCase();
+                const isVideo = ['mp4', 'webm'].includes(ext);
 
-        el.innerHTML = `
-            <div class="album-card">
-                <div class="media-container">
-                    ${isVideo ? `<video src="${item}" muted></video>` : `<img src="${item}" loading="lazy">`}
-                </div>
-            </div>`;
-        grid.appendChild(el);
-    });
+                const el = document.createElement('a');
+                el.href = item;
+                el.className = 'glightbox';
+                el.setAttribute('data-gallery', 'album');
 
-    const lightbox = GLightbox({
-        selector: '.glightbox',
-        loop: true,
-        slideEffect: 'slide',
-        thumbnails: { width: '90px', height: '60px', position: 'bottom' }
-    });
+                if (isVideo) el.setAttribute('data-glightbox', 'type: video');
 
-    const totalSlides = album.items.length;
+                el.innerHTML = `
+                    <div class="album-card">
+                        <div class="media-container">
+                            ${isVideo ? `<video src="${item}" muted></video>` : `<img src="${item}" loading="lazy">`}
+                        </div>
+                    </div>`;
+                grid.appendChild(el);
+            });
 
-    // Create counter once
-    if (!document.querySelector('.custom-gcounter')) {
-        const counterEl = document.createElement('p');
-        counterEl.className = 'custom-gcounter';
-        document.body.appendChild(counterEl);
-    }
+            const lightbox = GLightbox({
+                selector: '.glightbox',
+                loop: true,
+                slideEffect: 'slide'
+            });
 
-    const counterEl = document.querySelector('.custom-gcounter');
+            // Re-using your counter logic
+            const totalSlides = album.items.length;
+            const updateCounter = (index) => {
+                const counterEl = document.querySelector('.custom-gcounter');
+                if (counterEl) {
+                    counterEl.innerText = `${index + 1} / ${totalSlides}`;
+                }
+            };
 
+            lightbox.on('open', () => {
+                const modal = document.querySelector('.gcontainer');
+                const closeBtn = modal.querySelector('.gclose');
+                if (!document.querySelector('.custom-gcounter')) {
+                    closeBtn.insertAdjacentHTML('beforebegin', '<p class="custom-gcounter"></p>');
+                }
+                updateCounter(lightbox.index);
+            });
 
-// 1. Define the function safely
-const updateCounter = (index) => {
-    // Re-select the element to ensure it's found after the lightbox builds its UI
-    const counterEl = document.querySelector('.custom-gcounter');
-    if (counterEl && typeof index !== 'undefined') {
-        counterEl.innerText = `${index + 1} / ${totalSlides}`;
-    }
-};
-
-// 2. Initial set when opening
-lightbox.on('open', () => {
-  
-    const modal = document.querySelector('.gcontainer');
-    const closeBtn = modal.querySelector('.gclose');
-    
-    // Inject the HTML if it doesn't exist yet
-    if (!document.querySelector('.custom-gcounter')) {
-        closeBtn.insertAdjacentHTML('beforebegin', '<p class="custom-gcounter"></p>');
-    }
-    
-    // Use the internal lightbox index for the start
-    updateCounter(lightbox.index);
-  
-});
-
-// 3. The Fix: Handle the slide change event correctly
-lightbox.on('slide_before_change', (data) => {
-    // GLightbox often passes an object like { index: X, next: {...} }
-    // We check both the direct index and the nested index to be safe
-    const currentIndex = (data && typeof data.index !== 'undefined') 
-        ? data.index 
-        : (data.next ? data.next.index : lightbox.index);
-        
-    updateCounter(currentIndex);
-});
-}
-</script>
+            lightbox.on('slide_before_change', (data) => {
+                const currentIndex = (data && typeof data.index !== 'undefined') 
+                    ? data.index 
+                    : (data.next ? data.next.index : lightbox.index);
+                updateCounter(currentIndex);
+            });
+        }
+    </script>
 </body>
 </html>
